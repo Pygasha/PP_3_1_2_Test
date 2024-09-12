@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html  lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователи</title>
+</head>
+
+<table border="1">
+    <thead>
+    <tr>Пользователи</tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>year</th>
+        <th>password</th>
+
+
+    </tr>
+    <td th:text="${user.getId}"></td>
+    <td th:text="${user.getUsername()}"></td>
+    <td th:text="${user.getYearOfBirth}"></td>
+    <td th:password="${user.getPassword()}"></td>
+
+
+
+    </tbody>
+</table>
+
+
+<br>
+<br>
+
+Страница для аутентифицированных пользователей.
+<br/>
+<br/>
+
+
+
+<form th:action="@{/logout}" th:method="POST">
+  <input type="submit"value="Logout"/>
+</form>
+
+<br/>
+<br/>
+
+
+<a href="http://localhost:8080/admin/showAllUser">Все пользователи</a>
+</body>
+</html>
